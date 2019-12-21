@@ -15,11 +15,11 @@ cat <<- EOF
 EOF
 }
 
+#  CHeck if the domain is going through CloudFlare
 function cloudflare() {
 	
 	curl -ILs $SITE | grep -i "cloudflare" &>/dev/null
-	
-		local result=$?
+	local result=$?
 
 	if [[ $result -eq 0 ]]
 	then
